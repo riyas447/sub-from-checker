@@ -3,58 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Inbox Placement & Ratio Analyzer</title>
+    <title>Bulk Email Deliverability & Winner Selector</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>📧 Email Deliverability & Ratio Analyzer</h1>
-            <p>Check Inbox Placement Ratio for Outlook, Yahoo, and AOL before sending campaigns</p>
+            <h1>🚀 Bulk Email Winner Finder</h1>
+            <p>Paste multiple Subject Lines & From Names to instantly find the Best Winner for Outlook, Yahoo, and AOL.</p>
         </header>
 
         <main>
-            <section class="input-section">
+            <section class="input-card">
                 <div class="form-group">
-                    <label for="fromName">From Name</label>
-                    <input type="text" id="fromName" placeholder="e.g., Health Observer" oninput="analyzeEmail()">
+                    <label for="bulkFrom">From Names (One per line)</label>
+                    <textarea id="bulkFrom" rows="5" placeholder="Health Observer&#10;Urgent Warning&#10;Rosemary Remedy"></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="subjectLine">Subject Line</label>
-                    <input type="text" id="subjectLine" placeholder="e.g., Identify the cause of your breathing concerns" oninput="analyzeEmail()">
+                    <label for="bulkSubject">Subject Lines (One per line)</label>
+                    <textarea id="bulkSubject" rows="5" placeholder="Identify the cause of your breathing concerns&#10;Urgent Warning - Why your inhaler is bad&#10;Why Rosemary Is Getting Attention for Healthy Aging"></textarea>
                 </div>
+                <button onclick="analyzeBulk()" class="btn-primary">Find The Best Combination</button>
             </section>
 
-            <section class="results-section">
-                <div class="overall-score">
-                    <h3>Overall Inbox Score</h3>
-                    <div class="score-badge" id="overallScore">0%</div>
-                </div>
-
-                <div class="isp-ratios">
-                    <div class="isp-card">
-                        <h4>Microsoft Outlook</h4>
-                        <div class="ratio-bar"><div class="fill" id="outlookBar"></div></div>
-                        <span id="outlookScore">0%</span>
-                    </div>
-                    <div class="isp-card">
-                        <h4>Yahoo Mail</h4>
-                        <div class="ratio-bar"><div class="fill" id="yahooBar"></div></div>
-                        <span id="yahooScore">0%</span>
-                    </div>
-                    <div class="isp-card">
-                        <h4>AOL Mail</h4>
-                        <div class="ratio-bar"><div class="fill" id="aolBar"></div></div>
-                        <span id="aolScore">0%</span>
+            <section id="resultsSection" class="results-container" style="display: none;">
+                <div class="winner-banner">
+                    <h2>🏆 Top Recommended Winner Combination</h2>
+                    <div class="winner-details">
+                        <p><strong>Best From Name:</strong> <span id="bestFrom" class="highlight"></span></p>
+                        <p><strong>Best Subject Line:</strong> <span id="bestSubject" class="highlight"></span></p>
+                        <p><strong>Estimated Inbox Score:</strong> <span id="bestScore" class="score-green"></span></p>
                     </div>
                 </div>
 
-                <div class="feedback-box">
-                    <h3>Spam Analysis & Optimization Tips</h3>
-                    <ul id="feedbackList">
-                        <li>Enter a From Name and Subject Line above to see real-time deliverability analysis.</li>
-                    </ul>
+                <h3>📊 Full Bulk Analysis Results</h3>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>From Name</th>
+                                <th>Subject Line</th>
+                                <th>Outlook Score</th>
+                                <th>Yahoo Score</th>
+                                <th>AOL Score</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="resultsTable"></tbody>
+                    </table>
                 </div>
             </section>
         </main>
