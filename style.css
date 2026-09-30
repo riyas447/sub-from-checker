@@ -173,3 +173,30 @@ body {
         display: none !important;
     }
 }
+
+/* Text Selection தடுத்தல் */
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* பயனர் Focus இழக்கும்போது அல்லது Print Screen எடுக்கும்போது திரையை மறைக்க */
+.protected-content {
+    transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.blur-screen {
+    filter: blur(25px) !important;
+    opacity: 0.1 !important;
+    pointer-events: none !important;
+}
+
+/* Print எடுப்பதைத் தடுத்தல் */
+@media print {
+    body {
+        display: none !important;
+    }
+}
