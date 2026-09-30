@@ -156,3 +156,20 @@ th {
     border-radius: 4px;
     font-size: 12px;
 }
+
+/* Prevent Text Selection via CSS */
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Screen Protection against Print & Screen Capture */
+@media print {
+    html, body {
+        display: none !important;
+    }
+}
