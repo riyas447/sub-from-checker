@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Inbox Placement & Ratio Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📧 Email Deliverability & Ratio Analyzer</h1>
+            <p>Check Inbox Placement Ratio for Outlook, Yahoo, and AOL before sending campaigns</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <div class="form-group">
+                    <label for="fromName">From Name</label>
+                    <input type="text" id="fromName" placeholder="e.g., Health Observer" oninput="analyzeEmail()">
+                </div>
+                <div class="form-group">
+                    <label for="subjectLine">Subject Line</label>
+                    <input type="text" id="subjectLine" placeholder="e.g., Identify the cause of your breathing concerns" oninput="analyzeEmail()">
+                </div>
+            </section>
+
+            <section class="results-section">
+                <div class="overall-score">
+                    <h3>Overall Inbox Score</h3>
+                    <div class="score-badge" id="overallScore">0%</div>
+                </div>
+
+                <div class="isp-ratios">
+                    <div class="isp-card">
+                        <h4>Microsoft Outlook</h4>
+                        <div class="ratio-bar"><div class="fill" id="outlookBar"></div></div>
+                        <span id="outlookScore">0%</span>
+                    </div>
+                    <div class="isp-card">
+                        <h4>Yahoo Mail</h4>
+                        <div class="ratio-bar"><div class="fill" id="yahooBar"></div></div>
+                        <span id="yahooScore">0%</span>
+                    </div>
+                    <div class="isp-card">
+                        <h4>AOL Mail</h4>
+                        <div class="ratio-bar"><div class="fill" id="aolBar"></div></div>
+                        <span id="aolScore">0%</span>
+                    </div>
+                </div>
+
+                <div class="feedback-box">
+                    <h3>Spam Analysis & Optimization Tips</h3>
+                    <ul id="feedbackList">
+                        <li>Enter a From Name and Subject Line above to see real-time deliverability analysis.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
