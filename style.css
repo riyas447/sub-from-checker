@@ -6,35 +6,36 @@
 }
 
 body {
-    background-color: #0f172a;
-    color: #f8fafc;
-    padding: 30px 20px;
+    background-color: #0b0f19;
+    color: #f1f5f9;
+    padding: 30px 15px;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 header h1 {
     color: #38bdf8;
-    margin-bottom: 8px;
+    font-size: 28px;
+    margin-bottom: 6px;
 }
 
 header p {
     color: #94a3b8;
 }
 
-.input-section {
+.input-card {
     background: #1e293b;
     padding: 24px;
     border-radius: 12px;
-    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .form-group {
@@ -43,86 +44,115 @@ header p {
 
 .form-group label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     font-weight: 600;
     color: #cbd5e1;
 }
 
-.form-group input {
+textarea {
     width: 100%;
-    padding: 12px 16px;
+    padding: 12px;
     background: #0f172a;
     border: 1px solid #334155;
     border-radius: 8px;
-    color: #fff;
-    font-size: 16px;
+    color: #38bdf8;
+    font-size: 14px;
+    resize: vertical;
 }
 
-.form-group input:focus {
+textarea:focus {
     outline: none;
     border-color: #38bdf8;
 }
 
-.results-section {
-    background: #1e293b;
-    padding: 24px;
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background: #0284c7;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: #0369a1;
+}
+
+.results-container {
+    margin-top: 30px;
+}
+
+.winner-banner {
+    background: #064e3b;
+    border: 1px solid #10b981;
+    padding: 20px;
     border-radius: 12px;
+    margin-bottom: 25px;
 }
 
-.overall-score {
-    text-align: center;
-    margin-bottom: 24px;
-}
-
-.score-badge {
-    font-size: 48px;
-    font-weight: 700;
-    color: #38bdf8;
-    margin-top: 8px;
-}
-
-.isp-ratios {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 16px;
-    margin-bottom: 24px;
-}
-
-.isp-card {
-    background: #0f172a;
-    padding: 16px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.ratio-bar {
-    height: 10px;
-    background: #334155;
-    border-radius: 5px;
-    margin: 12px 0 8px;
-    overflow: hidden;
-}
-
-.fill {
-    height: 100%;
-    width: 0%;
-    background: #22c55e;
-    transition: width 0.4s ease;
-}
-
-.feedback-box {
-    background: #0f172a;
-    padding: 16px;
-    border-radius: 8px;
-}
-
-.feedback-box h3 {
+.winner-banner h2 {
+    color: #34d399;
+    font-size: 20px;
     margin-bottom: 12px;
-    color: #cbd5e1;
 }
 
-.feedback-box ul {
-    padding-left: 20px;
+.winner-details p {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.highlight {
+    color: #fff;
+    font-weight: 600;
+}
+
+.score-green {
+    color: #34d399;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1e293b;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+
+th, td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #334155;
+    font-size: 14px;
+}
+
+th {
+    background: #0f172a;
     color: #94a3b8;
-    line-height: 1.6;
+}
+
+.badge-pass {
+    background: #065f46;
+    color: #34d399;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.badge-risk {
+    background: #7f1d1d;
+    color: #fca5a5;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
 }
