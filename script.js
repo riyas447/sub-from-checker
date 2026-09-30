@@ -95,3 +95,22 @@ function analyzeBulk() {
 
     document.getElementById('resultsSection').style.display = 'block';
 }
+// Disable Right Click
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+
+// Disable Text Selection & Copy
+document.addEventListener('selectstart', function (e) {
+    e.preventDefault();
+});
+
+// Disable Key Combinations for Screenshots, Inspect, Print & Save
+document.addEventListener('keydown', function (e) {
+    // Prevent F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+    if (e.key === 'F12' || 
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) ||
+        (e.ctrlKey && (e.key === 'U' || e.key === 'u' || e.key === 'S' || e.key === 's' || e.key === 'P' || e.key === 'p'))) {
+        e.preventDefault();
+    }
+});
